@@ -18,7 +18,7 @@ namespace WebApplication1
 
         private bool CheckUsernamePassword()
         {
-            XElement korisnici = XElement.Load(@"C:\Users\TomoG\source\repos\WebApplication1\App_Data\korisnici.xml");
+            XElement korisnici = XElement.Load(@"C:\Users\VedranO\source\repos\WebApplication1\App_Data\korisnici.xml");
             var users = from user in korisnici.Elements("korisnik") select new
                         { username = (string)user.Element("korisnickoIme"), 
                           password = (string)user.Element("lozinka") };
@@ -35,7 +35,7 @@ namespace WebApplication1
             PanelDisplay.Visible = true;
             using (DataSet ds = new DataSet())
             {
-                ds.ReadXml(@"C:\Users\TomoG\source\repos\WebApplication1\App_Data\popisKnjiga.xml");
+                ds.ReadXml(@"C:\Users\VedranO\source\repos\WebApplication1\App_Data\popisKnjiga.xml");
                 GridViewData.DataSource = ds;
                 GridViewData.DataBind();
             }
